@@ -1,0 +1,29 @@
+trading:
+  pairs:
+    - EURUSD
+  default_timeframe: M15
+
+bot:
+  name: TechnicalBot
+  version: "1.0.0"
+  strategy: ema_crossover_rsi
+  ema_fast: 9
+  ema_slow: 21
+  rsi_period: 14
+  rsi_overbought: 70
+  rsi_oversold: 30
+  atr_period: 14
+  sl_atr_multiplier: 1.5
+  tp_atr_multiplier: 3.0
+
+risk:
+  max_drawdown_pct: 10.0
+  max_open_trades: 3
+  daily_loss_limit_pct: 5.0
+  risk_per_trade_pct: 1.0
+  max_lot_size: 0.10
+
+execution:
+  mode: paper        # paper or live — always start with paper
+  max_retries: 3
+  retry_delay_ms: 500
